@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title> Tienda </title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style>
+        .boton-imagen{
+            cursor: pointer;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <img src="batras.png" width="40" height="40" class="boton-imagen"  onclick="acciondelboton()">
+    <script>
+        function acciondelboton(){
+            window.location.href = "Practica2.html";
+        }
+    </script>
+    <h1 style="font-family:  Verdana;"> <center>Carrito</center></h1>
+    <hr>
+    <script>
+        window.onload = function () {
+            // Variables
+            let baseDeDatos = [
+                {
+                    id: 1,
+                    nombre: 'MyCoffeeBox',
+                    precio: 368.00,
+                    imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFPq01h4II_OVCcbcM8Ny8DYrVr0uDYKYceXINjSMzylCdtMLvgz3txRCbUGlUAXxwSXo&usqp=CAU'
+                },
+                {
+                    id: 2,
+                    nombre: 'Cafe Alarcon 250g.',
+                    precio: 60.00,
+                    imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_43cyyTqmSG9DzELDva4wM84nMTfLMQKzSw&usqp=CAU'
+                },
+                {
+                    id: 3,
+                    nombre: 'Tresso Cafe 1kg',
+                    precio: 298.00,
+                    imagen: 'data:image/jpeg;base64,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'
+                },
+                {
+                    id: 4,
+                    nombre: 'Etnia 52 Cafe 250g',
+                    precio: 72.00,
+                    imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUJlWHO_ea3TGqcNTKuVrvYG7__OHMqGboQwNzdl43pNZfWMSH9OilWPs9wyvwkhiI6Tk&usqp=CAU'
+                },
+                {
+                    id: 5,
+                    nombre: 'Cafiver Speciality 500g',
+                    precio: 2450.00,
+                    imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXbs3WZzKLBmjfS-b4UmY1Eo0C0KnZ8iGgpfg5W3ralC9RUGNZqtegOmIrtq-F8UsC2ck&usqp=CAU'
+                },
+                {
+                    id: 6,
+                    nombre: 'Juego de 4 Tazas Sanrio',
+                    precio:  390.00,
+                    imagen: 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTWvC-BXswuH36QpX9uAHoUoRspJZ9sqkTlgf9gEfK013gKkl1A8YiHQcBToE9o6sqcMLltj4iUMpINZRln1CO2PaHaor-FXNgvSMe0_qxE11i22nsYWVK_&usqp=CAE'
+                },
+                {
+                    id: 7,
+                    nombre: 'Juego de 8 Tazas porcelana',
+                    precio: 2391.66,
+                    imagen: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSPfF7BjHPnNI0loHXCby_EVHNcsWOBbQFkSMmWTaLCcje24vUhUftWqqmrRTnxnsKC6M7Dl4pp2wUwvNZWQUCd5D0As1FYZeCOkra_mIjV&usqp=CAE'
+                },
+                {
+                    id: 8,
+                    nombre: 'Juego de 6 Tazas Ceramica',
+                    precio: 872.46,
+                    imagen: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTy9obQqwgeyNoYCYn5vCd0osoLENZiuxejmvrjm5pPCuJjBrF7t9OdHATlthXCfk1gpmU1pstxtdB_WtewY5yMqAqNzyqRieqwziChsdll&usqp=CAE'
+                },
+                {
+                    id: 9,
+                    nombre: 'Tetera francesa 850ml',
+                    precio:  320.00,
+                    imagen: 'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTIMtBTY2Fv0WmXs8RalefoxyYhjby57uy8y_1zjQ8QW9vMRZxvMa0tvFm9JKxmNB9b49GmNSi6ch7Ko_KvXIa9bMAG-zdxqAUrU1AW8zc_VrBoQpyZfWeN&usqp=CAE'
+                },
+                {
+                    id: 10,
+                    nombre: 'Tetera Gibson',
+                    precio: 339.00,
+                    imagen: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR4I12vvA33D3NWYIYyspDq-McUJzf77QOuS1vEXW5z5VgKCMWzhOWOr4H2OnOYa1ehswRU25lOsQGHyvIol4fDTuUJKMhYTn6L6De4fU9WmvJw2Ol5Wsfk&usqp=CAE'
+                },
+                {
+                    id: 11,
+                    nombre: 'Cafetera Espresso',
+                    precio: 1699.00,
+                    imagen: 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRTkT6ntA94gQBrY0Lq9Pn89xNfRTm3CvqdA10m3gfp4e6pwL7wJQvJVfmRI5G7rPPbMwSgW66TQNzdsJY6xTXSN0SKkJZSVkcYxurgyOFGE4BiNvqxCxSy-w&usqp=CAE'
+                },
+                {
+                    id: 12,
+                    nombre: 'Cafetera Philips',
+                    precio:  5887.99,
+                    imagen: 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS22ZSaAIWiO7XYeNBW-MQoWppv51LvVNW2xf_T5XS7gttKxx4NA4DEwSCySyprEaoVJ-TJzYWwxq_a4XqB2V0acDCaT_VLINQykxPKvPgd-tuBQDj_uHliqQ&usqp=CAE'
+                }
+
+
+
+            ]
+            let $items = document.querySelector('#items');
+            let carrito = [];
+            let total = 0;
+            let $carrito = document.querySelector('#carrito');
+            let $total = document.querySelector('#total');
+            let $botonVaciar = document.querySelector('#boton-vaciar');
+
+            // Funciones
+            function renderItems() {
+                for (let info of baseDeDatos) {
+                    // Estructura
+                    let miNodo = document.createElement('div');
+                    miNodo.classList.add('card', 'col-sm-4');
+                    // Body
+                    let miNodoCardBody = document.createElement('div');
+                    miNodoCardBody.classList.add('card-body');
+                    // Titulo
+                    let miNodoTitle = document.createElement('h5');
+                    miNodoTitle.classList.add('card-title');
+                    miNodoTitle.textContent = info['nombre'];
+                    // Imagen
+                    let miNodoImagen = document.createElement('img');
+                    miNodoImagen.classList.add('img-fluid');
+                    miNodoImagen.setAttribute('src', info['imagen']);
+                    // Precio
+                    let miNodoPrecio = document.createElement('p');
+                    miNodoPrecio.classList.add('card-text');
+                    miNodoPrecio.textContent = '$' + info['precio'] ;
+                    // Boton 
+                    let miNodoBoton = document.createElement('button');
+                    miNodoBoton.classList.add('btn', 'btn-primary');
+                    miNodoBoton.textContent = '+';
+                    miNodoBoton.setAttribute('marcador', info['id']);
+                    miNodoBoton.addEventListener('click', anyadirCarrito);
+                    // Insertamos
+                    miNodoCardBody.appendChild(miNodoImagen);
+                    miNodoCardBody.appendChild(miNodoTitle);
+                    miNodoCardBody.appendChild(miNodoPrecio);
+                    miNodoCardBody.appendChild(miNodoBoton);
+                    miNodo.appendChild(miNodoCardBody);
+                    $items.appendChild(miNodo);
+                }
+            }
+
+            function anyadirCarrito () {
+                // Anyadimos el Nodo a nuestro carrito
+                carrito.push(this.getAttribute('marcador'))
+                // Calculo el total
+                calcularTotal();
+                // Renderizamos el carrito 
+                renderizarCarrito();
+            }
+
+            function renderizarCarrito() {
+                // Vaciamos todo el html
+                $carrito.textContent = '';
+                // Quitamos los duplicados
+                let carritoSinDuplicados = [...new Set(carrito)];
+                // Generamos los Nodos a partir de carrito
+                carritoSinDuplicados.forEach(function (item, indice) {
+                    // Obtenemos el item que necesitamos de la variable base de datos
+                    let miItem = baseDeDatos.filter(function(itemBaseDatos) {
+                        return itemBaseDatos['id'] == item;
+                    });
+                    // Cuenta el número de veces que se repite el producto
+                    let numeroUnidadesItem = carrito.reduce(function (total, itemId) {
+                        return itemId === item ? total += 1 : total;
+                    }, 0);
+                    // Creamos el nodo del item del carrito
+                    let miNodo = document.createElement('li');
+                    miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
+                    miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0]['nombre']} - ${miItem[0]['precio']}$`;
+                    // Boton de borrar
+                    let miBoton = document.createElement('button');
+                    miBoton.classList.add('btn', 'btn-danger', 'mx-5');
+                    miBoton.textContent = 'X';
+                    miBoton.style.marginLeft = '1rem';
+                    miBoton.setAttribute('item', item);
+                    miBoton.addEventListener('click', borrarItemCarrito);
+                    // Mezclamos nodos
+                    miNodo.appendChild(miBoton);
+                    $carrito.appendChild(miNodo);
+                })
+            }
+
+            function borrarItemCarrito() {
+                console.log()
+                // Obtenemos el producto ID que hay en el boton pulsado
+                let id = this.getAttribute('item');
+                // Borramos todos los productos
+                carrito = carrito.filter(function (carritoId) {
+                    return carritoId !== id;
+                });
+                // volvemos a renderizar
+                renderizarCarrito();
+                // Calculamos de nuevo el precio
+                calcularTotal();
+            }
+
+            function calcularTotal() {
+                // Limpiamos precio anterior
+                total = 0;
+                // Recorremos el array del carrito
+                for (let item of carrito) {
+                    // De cada elemento obtenemos su precio
+                    let miItem = baseDeDatos.filter(function(itemBaseDatos) {
+                        return itemBaseDatos['id'] == item;
+                    });
+                    total = total + miItem[0]['precio'];
+                }
+                // Formateamos el total para que solo tenga dos decimales
+                let totalDosDecimales = total.toFixed(2);
+                // Renderizamos el precio en el HTML
+                $total.textContent = totalDosDecimales;
+            }
+
+            function vaciarCarrito() {
+                // Limpiamos los productos guardados
+                carrito = [];
+                // Renderizamos los cambios
+                renderizarCarrito();
+                calcularTotal();
+            }
+
+            // Eventos
+            $botonVaciar.addEventListener('click', vaciarCarrito);
+
+            // Inicio
+            renderItems();
+        } 
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- Elementos generados a partir del JSON -->
+            <main id="items" class="col-sm-8 row"></main>
+            <!-- Carrito -->
+            <aside class="col-sm-4">
+                <h2>Pagar</h2>
+                <!-- Elementos del carrito -->
+                <ul id="carrito" class="list-group"></ul>
+                <hr>
+                <!-- Precio total -->
+                <p class="text-right">Total: <span id="total"></span>&euro;</p>
+                <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+                <hr>
+                <br>
+                <script src="https://www.paypal.com/sdk/js?client-id=Ab9gtDPZbaAj4qNfNp6i5PNbHD54KPfG9i1fbNNfAGrzw_WLOZzRweOp77Qz8_byuMSdDyI-xuCkOfPO&vault=true&intent=subscription">
+                </script>
+                   <div id="paypal-button-container"></div>
+                    <script>
+                     paypal.Buttons({
+                      createSubscription: function(data, actions) {
+                        return actions.subscription.create({
+                         'plan_id': 'YOUR_PLAN_ID' // Creates the subscription
+                         });
+                       },
+                       onApprove: function(data, actions) {
+                         alert('You have successfully subscribed to ' + data.subscriptionID); // Optional message given to subscriber
+                       }
+                     }).render('#paypal-button-container'); // Renders the PayPal button
+                    </script>
+            </aside>
+        </div>
+    </div>
+    <br>    
+</body>
+</html>
