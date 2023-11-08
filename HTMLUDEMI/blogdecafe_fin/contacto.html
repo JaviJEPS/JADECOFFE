@@ -7,9 +7,14 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+      #map {
+           height: 50%; 
+           width: 40%;
+        } 
 </head>
 <body>
-
+<div id ="map"> </div> 
+      <div id="fb-root"></div>
     <header class="header">
 
         <div class="contenedor">
@@ -47,7 +52,23 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1240.8388347809084!2d-74.00694907164562!3d40.707236014010274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2589a430bd5c5%3A0xf264e0d28cde7ad3!2sStatue%20of%20Liberty%20National%20Monument!5e0!3m2!1sen!2sus!4v1635584295854!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
-
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0" nonce="5QNbhpHB"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCKiIqCdZGrVxx06LSbe7uG3zXOq1Cz5k&callback=initMap" async defer></script>
+     <script>
+      var map;
+       function initMap() { 
+        map = new google.maps.Map(document.getElementById('map'), { 
+            center: {lat: 31.59985440002714, lng:-106.40862820922588 },
+            zoom: 13,
+             }); 
+             var marker = new google.maps.Marker({ 
+                position: {lat: 31.59985440002714, lng: -106.40862820922588},
+                map: map, 
+                title: 'Universidad Tecnológica de Ciudad Juárez' 
+                });
+                 } 
+                 </script> 
+         <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="" data-action="" data-size="" data-share="true"></div>
         
     </main>
 
