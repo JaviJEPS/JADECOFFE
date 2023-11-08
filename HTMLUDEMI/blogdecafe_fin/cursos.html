@@ -12,6 +12,41 @@
 </head>
 
 <body>
+    <script>
+        function addSubscription() {
+            var apiKey = 'AIzaSyAzHWj3tTKe0_iJxwAnlb5S8WZYwiD4uDE';
+            var channelId = 'UCSaNcvG4nIsecoB12tfNwCA';
+            var resource = {
+                snippet: {
+                    resourceId: {
+                        kind: 'youtube#channel',
+                        channelId: channelId
+                    }
+                }
+            };
+
+            try {
+                var response = YouTube.Subscriptions.insert(resource, 'snippet');
+                if (response) {
+                    alert('¡Te has suscrito al canal exitosamente!');
+                }
+            } catch (e) {
+                if (e.message.match('subscriptionDuplicate')) {
+                    alert('Ya estás suscrito al canal: ' + channelId);
+                } else {
+                    alert('Error al agregar la suscripción: ' + e.message);
+                }
+            }
+        }
+    </script>
+     <button onclick="addSubscription()" id="subscribeButton">Suscríbete a nuestro canal de YouTube</button>
+     <style>
+        #subscribeButton {
+            position: absolute;
+            bottom: -1390px; /* Ajusta la distancia desde la parte inferior según tus necesidades */
+            right: 725px; /* Ajusta la distancia desde la derecha según tus necesidades */
+        }
+    </style>
 
     <header class="header">
 
@@ -36,140 +71,25 @@
     </header>
 
     <main class="contenedor">
-        <h3 class="centrar-texto">Nuestros Próximos Cursos y Talleres</h3>
+        <h3 class="centrar-texto">Nuestros Cursos de Preparación de Café</h3>
 
         <div class="curso">
-            <div class="curso__imagen">
-                <img src="img/curso1.jpg" alt="Imagen del curso">
-            </div>
-            <div class="curso__informacion">
-                <h4 class="no-margin">Técnicas de extracción de café</h4>
-                <p class="curso__label">Precio:
-                    <span class="curso__info">Gratis</span>
-                </p>
-                <p class="curso__label">Cupo:
-                    <span class="curso__info">20</span>
-                </p>
-                <p class="curso__descripcion">
-                    Las técnicas de extracción de café son métodos utilizados para obtener lo mejor de los sabores y
-                    aromas de los granos de café.
-
-                <p>Espresso: Esta técnica implica forzar agua caliente a través de café finamente molido, resultando en
-                    una bebida concentrada y cremosa conocida por su intensidad y cuerpo.
-
-                <p>Cafetera de goteo: Es un método popular en hogares y oficinas, donde el agua caliente gotea sobre el
-                    café molido en un filtro, extrayendo gradualmente los sabores.
-
-                <p>Prensa francesa: Este método consiste en sumergir el café molido en agua caliente y luego presionar
-                    con un émbolo para separar los posos y obtener una infusión más completa.
-                </p>
-            </div> 
-        </div> 
-
+            <h4>Curso basico de cafe </h4>
+            <p>Conviértete en un maestro de la preparación de café. Domina la molienda de granos, crea espressos perfectos y sorprende con impresionante arte latte.</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/op6levyiA94?si=uwYp4kHPsgsRLFUn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    
         <div class="curso">
-            <div class="curso__imagen">
-                <img src="img/curso2.jpg" alt="Imagen del curso">
-            </div>
-            <div class="curso__informacion">
-                <h4 class="no-margin">Taller para Tostar y Moler Granos</h4>
-                <p class="curso__label">Precio:
-                    <span class="curso__info">Gratis</span>
-                </p>
-                <p class="curso__label">Cupo:
-                    <span class="curso__info">20</span>
-                </p>
-                <p class="curso__descripcion">
-                    Este taller está diseñado para apasionados del café, baristas y cualquier persona interesada en
-                    descubrir los secretos detrás de una taza de café excepcional. Al final del curso, estarás preparado
-                    para crear tu café personalizado, disfrutando de sabores y aromas que te sorprenderán. ¡Te esperamos
-                    para compartir esta emocionante experiencia cafetera!
-                </p>
-            </div> 
-        </div> 
-
+            <h4>Taller de Métodos de Tostado</h4>
+            <p>Descubre diferentes métodos para tostar el sabor del café. Desde la prensa francesa hasta la pour-over, ¡explora nuevas posibilidades!</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ahcGrcQG5Fk?si=gIIrEzyEDnQlP0pU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    
         <div class="curso">
-            <div class="curso__imagen">
-                <img src="img/curso3.jpg" alt="Imagen del curso">
-            </div>
-            <div class="curso__informacion">
-                <h4 class="no-margin">4 Recetas de Café para Principiantes</h4>
-                <p class="curso__label">Precio:
-                    <span class="curso__info">Gratis</span>
-                </p>
-                <p class="curso__label">Cupo:
-                    <span class="curso__info">20</span>
-                </p>
-                <p class="curso__descripcion">
-                    <P>Café con leche:
-                    Ingredientes:
-
-                    1 taza de café recién preparado
-                    1/2 taza de leche (puedes usar leche entera, descremada o vegetal)
-                    Azúcar o edulcorante al gusto (opcional)
-                    Instrucciones:
-
-                    Calienta la leche en una cacerola a fuego medio hasta que comience a vaporizar, sin que llegue a
-                    hervir.
-                    Mientras tanto, prepara tu taza de café favorita.
-                    Vierte la leche caliente sobre el café y mezcla.
-                    Añade azúcar o edulcorante si lo deseas.
-                    ¡Disfruta de tu café con leche!
-                    
-                    <P>Café Mocha:
-                    Ingredientes:
-
-                    1 taza de café recién preparado
-                    2 cucharadas de cacao en polvo
-                    2 cucharadas de azúcar
-                    1/2 taza de leche
-                    Crema batida (opcional)
-                    Instrucciones:
-
-                    En una cacerola, mezcla el cacao en polvo y el azúcar con la leche a fuego medio hasta que estén
-                    bien combinados.
-                    Prepara una taza de café.
-                    Vierte la mezcla de cacao y leche en el café y mezcla bien.
-                    Decora con crema batida si lo deseas.
-                    ¡Disfruta de tu delicioso café mocha!
-                    
-                    <P>Café Helado:
-                    Ingredientes:
-
-                    1 taza de café recién preparado
-                    Hielo
-                    1/2 taza de leche
-                    Azúcar o jarabe de vainilla al gusto (opcional)
-                    Instrucciones:
-
-                    Prepara el café y deja que se enfríe.
-                    Llena un vaso con hielo.
-                    Vierte el café enfriado sobre el hielo.
-                    Agrega la leche y remueve.
-                    Endulza con azúcar o jarabe de vainilla si lo prefieres.
-                    ¡Disfruta de un refrescante café helado!
-                    
-                    <P>Café Latte:
-                    Ingredientes:
-
-                    1 taza de café recién preparado
-                    1/2 taza de leche
-                    Espuma de leche (puedes calentar un poco de leche y batirla con un batidor manual para crear la
-                    espuma)
-                    Canela en polvo o cacao en polvo (opcional)
-                    Instrucciones:
-
-                    Prepara una taza de café.
-                    Calienta la leche en una cacerola a fuego medio hasta que comience a vaporizar, sin llegar a hervir.
-                    Vierte la leche caliente sobre el café.
-                    Agrega la espuma de leche por encima.
-                    Espolvorea con canela o cacao en polvo si lo deseas.
-                    ¡Disfruta de un suave y cremoso café latte!
-                    ¡Espero que disfrutes de estas recetas de café para principiantes y te animes a experimentar con
-                    diferentes ingredientes para personalizar tu experiencia cafetera!
-                </p>
-            </div> 
-        </div> 
-
+            <h4>Curso de metodos de preparacion de cafe </h4>
+            <p>Desarrolla tu paladar y aprecia la diversidad de sabores en el mundo del café. Aprende metodos de como preparar cafe en casa.</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/FakuUk2vGds?si=wcw9THMBM6_Hs8vY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
 
     </main>
 
@@ -190,5 +110,4 @@
     </footer>
     <script src="js/modernizr.js"></script>
 </body>
-
 </html>
