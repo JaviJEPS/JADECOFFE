@@ -8,11 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
-         #map {
-           height: 50%; 
-           width: 40%;
-        } 
-          </style> 
+        #map {
+          height: 60%; 
+          width: 55%;
+          top: 760px;
+          left: 400px;
+       } 
+         </style> 
 </head>
 <body>
 <div id ="map"> </div> 
@@ -37,6 +39,9 @@
             <h2 class="no-margin">Blog de café con consejos y cursos</h2>
             <p class="no-margin">Aprende de los expertos con las mejores recetas y consejos</p>
         </div>
+        <div id ="map"> </div> 
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=691176633063941" nonce="06aDtiwi"></script>
     </header>
 
     <main class="contenedor">
@@ -51,23 +56,24 @@
 
         <!-- Agrega el mapa aquí, alineado a la izquierda -->
 
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0" nonce="5QNbhpHB"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCKiIqCdZGrVxx06LSbe7uG3zXOq1Cz5k&callback=initMap" async defer></script>
-     <script>
-      var map;
-       function initMap() { 
-        map = new google.maps.Map(document.getElementById('map'), { 
-            center: {lat: 31.59985440002714, lng:-106.40862820922588 },
-            zoom: 13,
-             }); 
-             var marker = new google.maps.Marker({ 
-                position: {lat: 31.59985440002714, lng: -106.40862820922588},
-                map: map, 
-                title: 'Universidad Tecnológica de Ciudad Juárez' 
-                });
-                 } 
-                 </script> 
-         <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="" data-action="" data-size="" data-share="true"></div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCKiIqCdZGrVxx06LSbe7uG3zXOq1Cz5k&callback=initMap" async defer></script>
+<script>
+   var map;
+    function initMap() { 
+     map = new google.maps.Map(document.getElementById('map'), { 
+         center: {lat: 31.59985440002714, lng:-106.40862820922588 },
+         zoom: 13,
+          }); 
+          var marker = new google.maps.Marker({ 
+             position: {lat: 31.59985440002714, lng: -106.40862820922588},
+             map: map, 
+             title: 'Universidad Tecnológica de Ciudad Juárez' 
+             });
+              } 
+              </script> 
+              <div class="contenido_fb">
+                 <div class="fb-group" data-href="https://www.facebook.com/groups/1382353955999707" data-width="280" data-show-metadata="false" ><blockquote cite="https://www.facebook.com/groups/1382353955999707" class="fb-xfbml-parse-ignore">A Year of Running</blockquote></div>
+              </div>
         
     </main>
 
